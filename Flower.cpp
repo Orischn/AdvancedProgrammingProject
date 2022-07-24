@@ -1,39 +1,45 @@
+#include "flower.hpp"
 #include <math.h>
+#include <string>
 
-double max(double num1, double num2) {
-    if (num1 > num2) {
-        return num1;
-    }
-    return num2;
+using namespace std;
+
+void Flower::setSepalWidth(double sepalWidth) {
+    this->sepalWidth = sepalWidth;
 }
 
-class Flower {
-    private :
-        double sepalWidth;
-        double sepalLength;
-        double petalWidth;
-        double petalLength;
-    public :
-        Flower(double sw, double sl, double pw, double pl) {
-            sepalWidth = sw;
-            sepalLength = sl;
-            petalWidth = pw;
-            petalLength = pl;
-        }
+void Flower::setSepalLength(double sepalLength) {
+    this->sepalLength = sepalLength;
+}
 
-        double euclidianDisTo(Flower flower) {
-            return pow(pow(sepalLength - flower.sepalLength, 2) + pow(sepalWidth - flower.sepalWidth, 2) +
-                    pow(petalLength - flower.petalLength, 2) + pow(petalWidth - flower.petalWidth, 2), 0.5);
-        }
+void Flower::setPetalWidth(double petalWidth) {
+    this->petalWidth = petalWidth;
+}
 
-        double manhattanDisTo(Flower flower) {
-            return sepalLength - flower.sepalLength + sepalWidth - flower.sepalWidth +
-                    petalLength - flower.petalLength + petalWidth - flower.petalWidth;
-        }
+void Flower::setPetalLength(double petalLength) {
+    this->petalLength = petalLength;
+}
 
-        double chebyshevDisTo(Flower flower) {
-            double max1 = max(sepalLength - flower.sepalLength, sepalWidth - flower.sepalWidth);
-            double max2 = max(petalLength - flower.petalLength, petalWidth - flower.petalWidth);
-            return max(max1, max2);
-        }
-};
+void Flower::setflowerType(string flowerType) {
+    this->flowerType = flowerType;
+}
+
+string Flower::getData() {
+    return flowerType;
+}
+
+double Flower::euclidianDisTo(Flower flower) {
+    return pow(pow(sepalLength - flower.sepalLength, 2) + pow(sepalWidth - flower.sepalWidth, 2) +
+            pow(petalLength - flower.petalLength, 2) + pow(petalWidth - flower.petalWidth, 2), 0.5);
+}
+
+double Flower::manhattanDisTo(Flower flower) {
+    return sepalLength - flower.sepalLength + sepalWidth - flower.sepalWidth +
+            petalLength - flower.petalLength + petalWidth - flower.petalWidth;
+}
+
+double Flower::chebyshevDisTo(Flower flower) {
+    double max1 = max(sepalLength - flower.sepalLength, sepalWidth - flower.sepalWidth);
+    double max2 = max(petalLength - flower.petalLength, petalWidth - flower.petalWidth);
+    return max(max1, max2);
+}
