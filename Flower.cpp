@@ -24,10 +24,6 @@ void Flower::setflowerType(string flowerType) {
     this->flowerType = flowerType;
 }
 
-string Flower::getData() {
-    return flowerType;
-}
-
 double Flower::euclidianDisTo(Flower flower) {
     return pow(pow(sepalLength - flower.sepalLength, 2) + pow(sepalWidth - flower.sepalWidth, 2) +
             pow(petalLength - flower.petalLength, 2) + pow(petalWidth - flower.petalWidth, 2), 0.5);

@@ -9,15 +9,19 @@ double findMinDistance();
 int getFileLength(string path);
 Flower* getDataFromFile(string path);
 
+
 int main() {
-    const string path = "data\\classified.csv";
-    const int length = getFileLength(path);
-    Flower* flowers = getDataFromFile(path);
-    for (int i = 0; i < length; i++) {
-        cout<<flowers[i].getData()<<endl;
-    }
+    const string cFilePath = "data\\classified.csv";
+    const string ucFilePath = "data\\Unclassified.csv";
+    Flower* cFlowers = getDataFromFile(cFilePath);
+    Flower* ucFlowers = getDataFromFile(ucFilePath);
 }
 
+/*
+ * The function gets a string path to a file and returns its length.
+ * Input: A path to a file.
+ * Output: The length of the file (in lines).
+ */
 int getFileLength(string path) {
     ifstream input;
     input.open(path);
@@ -31,6 +35,12 @@ int getFileLength(string path) {
     return count;
 }
 
+/*
+ * The function takes all the data from the files with information about flowers,
+ * and returns a pointer to an array that contains all that data in the format of a Flower.
+ * Input: a path to a file.
+ * Output: a pointer to an array with the data in the file in the format of a Flower.
+ */
 Flower* getDataFromFile(string path) {
     ifstream input;
     string line;

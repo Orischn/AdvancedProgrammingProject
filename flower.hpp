@@ -17,9 +17,23 @@ class Flower {
         void setPetalWidth(double petalWidth);
         void setPetalLength(double petalLength);
         void setflowerType(string flowerType);
-        string getData();
+        /*
+         * Returns the euclidian distance from this flower to a different flower.
+         * Input: A flower.
+         * Output: The euclidian distance from this flower to the given flower.
+         */
         double euclidianDisTo(Flower flower);
+        /*
+         * Returns the manhattan distance from this flower to a different flower.
+         * Input: A flower.
+         * Output: The manhattan distance from this flower to the given flower.
+         */
         double manhattanDisTo(Flower flower);
+        /*
+         * Returns the chebyshev distance from this flower to a different flower.
+         * Input: A flower.
+         * Output: The chebyshev distance from this flower to the given flower.
+         */
         double chebyshevDisTo(Flower flower);
 };
 
