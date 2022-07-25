@@ -35,6 +35,9 @@ class Flower {
          * Output: The chebyshev distance from this flower to the given flower.
          */
         double chebyshevDisTo(Flower flower);
+
+        void classifyFlower(Flower* cFlowers, int amt,
+        int k, double (*compare)(Flower));
 };
 
 #endif

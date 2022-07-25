@@ -25,17 +25,23 @@ void Flower::setflowerType(string flowerType) {
 }
 
 double Flower::euclidianDisTo(Flower flower) {
-    return pow(pow(sepalLength - flower.sepalLength, 2) + pow(sepalWidth - flower.sepalWidth, 2) +
-            pow(petalLength - flower.petalLength, 2) + pow(petalWidth - flower.petalWidth, 2), 0.5);
+    return pow(pow(abs(sepalLength - flower.sepalLength), 2) +
+            pow(abs(sepalWidth - flower.sepalWidth), 2) +
+            pow(abs(petalLength - flower.petalLength), 2) +
+            pow(abs(petalWidth - flower.petalWidth), 2), 0.5);
 }
 
 double Flower::manhattanDisTo(Flower flower) {
-    return sepalLength - flower.sepalLength + sepalWidth - flower.sepalWidth +
-            petalLength - flower.petalLength + petalWidth - flower.petalWidth;
+    return abs(sepalLength - flower.sepalLength) +
+            abs(sepalWidth - flower.sepalWidth) +
+            abs(petalLength - flower.petalLength) +
+            abs(petalWidth - flower.petalWidth);
 }
 
 double Flower::chebyshevDisTo(Flower flower) {
-    double max1 = max(sepalLength - flower.sepalLength, sepalWidth - flower.sepalWidth);
-    double max2 = max(petalLength - flower.petalLength, petalWidth - flower.petalWidth);
+    double max1 = max(abs(sepalLength - flower.sepalLength),
+                        abs(sepalWidth - flower.sepalWidth));
+    double max2 = max(abs(petalLength - flower.petalLength),
+                        abs(petalWidth - flower.petalWidth));
     return max(max1, max2);
 }
