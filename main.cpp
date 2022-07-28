@@ -53,7 +53,7 @@ Flower* getDataFromFile(string path) {
     int length = getFileLength(path);
     Flower* flowers = new Flower[length];
     input.open(path);
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length - 1; i++) {
         getline(input, line);
         flowers[i].setSepalWidth(stod(line.substr(0, line.find(','))));
         line = line.substr(line.find(',') + 1, line.length());
