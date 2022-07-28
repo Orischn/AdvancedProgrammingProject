@@ -12,11 +12,14 @@ class Flower {
         double petalLength;
         string flowerType;
     public :
+        Flower();
+        Flower(const Flower& flower);
         void setSepalWidth(double sepalWidth);
         void setSepalLength(double sepalLength);
         void setPetalWidth(double petalWidth);
         void setPetalLength(double petalLength);
-        void setflowerType(string flowerType);
+        void setFlowerType(string flowerType);
+        string getFlowerType();
         /*
          * Returns the euclidian distance from this flower to a different flower.
          * Input: A flower.
@@ -37,7 +40,7 @@ class Flower {
         double chebyshevDisTo(Flower flower);
 
         void classifyFlower(Flower* cFlowers, int amt,
-        int k, double (*compare)(Flower));
+        int k, double (Flower::*distance)(Flower));
 };
 
 #endif

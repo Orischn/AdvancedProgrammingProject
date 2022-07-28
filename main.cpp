@@ -10,11 +10,17 @@ int getFileLength(string path);
 Flower* getDataFromFile(string path);
 
 
-int main() {
+int main(int argc, char** argv) {
     const string cFilePath = "data\\classified.csv";
     const string ucFilePath = "data\\Unclassified.csv";
     Flower* cFlowers = getDataFromFile(cFilePath);
     Flower* ucFlowers = getDataFromFile(ucFilePath);
+    int cLength = getFileLength(cFilePath);
+    int ucLength = getFileLength(ucFilePath);
+    for (int i = 0; i < ucLength; i++) {
+        ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), Flower::euclidianDisTo);
+        cout << ucFlowers[i].getFlowerType()<<endl;
+    }
 }
 
 /*
@@ -57,7 +63,7 @@ Flower* getDataFromFile(string path) {
         line = line.substr(line.find(',') + 1, line.length());
         flowers[i].setPetalLength(stod(line.substr(0, line.find(','))));
         line = line.substr(line.find(',') + 1, line.length());
-        flowers[i].setflowerType(line);
+        flowers[i].setFlowerType(line);
     }
     return flowers;
 }
