@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     int ucLength = getFileLength(ucFilePath);
     for (int i = 0; i < ucLength; i++) {
         ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), &Flower::euclidianDisTo);
-        cout << ucFlowers[i].getFlowerType()<<endl;
+        cout<<ucFlowers[i].getFlowerType()<<endl;
     }
 }
 
