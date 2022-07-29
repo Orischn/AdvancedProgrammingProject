@@ -1,5 +1,5 @@
 #include "flower.hpp"
-#include <math.h>
+#include <cmath>
 #include <string>
 #include <iostream>
 
