@@ -9,10 +9,9 @@ double findMinDistance();
 int getFileLength(string path);
 Flower* getDataFromFile(string path);
 
-
 int main(int argc, char** argv) {
-    const string cFilePath = "data\\classified.csv";
-    const string ucFilePath = "data\\Unclassified.csv";
+    const string cFilePath = "data/classified.csv";
+    const string ucFilePath = "data/Unclassified.csv";
     Flower* cFlowers = getDataFromFile(cFilePath);
     Flower* ucFlowers = getDataFromFile(ucFilePath);
     int cLength = getFileLength(cFilePath);
@@ -33,8 +32,7 @@ int getFileLength(string path) {
     input.open(path);
     string line;
     int count = 0;
-    while(!input.eof()) {
-        getline(input, line);
+    while(getline(input, line)) {
         count++;
     }
     input.close();
@@ -53,7 +51,7 @@ Flower* getDataFromFile(string path) {
     int length = getFileLength(path);
     Flower* flowers = new Flower[length];
     input.open(path);
-    for (int i = 0; i < length - 1; i++) {
+    for (int i = 0; i < length; i++) {
         getline(input, line);
         flowers[i].setSepalWidth(stod(line.substr(0, line.find(','))));
         line = line.substr(line.find(',') + 1, line.length());

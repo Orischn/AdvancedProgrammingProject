@@ -39,8 +39,7 @@ class Flower {
          */
         double chebyshevDisTo(Flower flower);
 
-        void classifyFlower(Flower* cFlowers, int amt,
-        int k, double (Flower::*distance)(Flower));
+        void classifyFlower(Flower* cFlowers, int amt, int k, double (Flower::*distance)(Flower));
 };
 
 #endif
