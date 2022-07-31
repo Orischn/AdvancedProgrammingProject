@@ -23,5 +23,6 @@ int main(int argc, char** argv) {
         ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), &Flower::chebyshevDisTo);
     }
     writeDataToFile(ucFlowers, ucLength, "out/chebyshev_output.csv");
-
+    delete[] cFlowers;
+    delete[] ucFlowers;
 }
