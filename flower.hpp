@@ -20,6 +20,10 @@ class Flower {
         void setPetalWidth(double petalWidth);
         void setPetalLength(double petalLength);
         void setFlowerType(string flowerType);
+        double getSepalWidth();
+        double getSepalLength();
+        double getPetalWidth();
+        double getPetalLength();
         string getFlowerType();
         /*
          * Returns the euclidian distance from this flower to a different flower.

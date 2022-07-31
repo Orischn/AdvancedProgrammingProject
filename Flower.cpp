@@ -40,6 +40,22 @@ void Flower::setFlowerType(string flowerType) {
     this->flowerType = flowerType;
 }
 
+double Flower::getSepalWidth() {
+    return this->sepalWidth;
+}
+
+double Flower::getSepalLength() {
+    return this->sepalLength;
+}
+
+double Flower::getPetalWidth() {
+    return this->petalWidth;
+}
+
+double Flower::getPetalLength() {
+    return this->petalLength;
+}
+
 string Flower::getFlowerType() {
     return this->flowerType;
 }
@@ -89,16 +105,16 @@ void Flower::classifyFlower(Flower* cFlowers, int amt, int k, double (Flower::*d
             flowerTypes[2]++;
         }
     }
-    int maxI = 0, maxN = 0;
+    int maxIndex = 0, maxNum = 0;
     for (int i = 0; i < 3; i++) {
-        if (flowerTypes[i] > maxN) {
-            maxN = flowerTypes[i];
-            maxI = i;
+        if (flowerTypes[i] > maxNum) {
+            maxNum = flowerTypes[i];
+            maxIndex = i;
         }
     }
-    if (maxI == 0) {
+    if (maxIndex == 0) {
         this->flowerType = "Iris-setosa";
-    } else if (maxI == 1) {
+    } else if (maxIndex == 1) {
         this->flowerType = "Iris-versicolor";
     } else {
         this->flowerType = "Iris-virginica";

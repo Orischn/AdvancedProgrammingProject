@@ -6,5 +6,6 @@
 
 int getFileLength(string path);
 Flower* getDataFromFile(string path);
+void writeDataToFile(Flower* flowers, int amt, string path);
 
 #endif

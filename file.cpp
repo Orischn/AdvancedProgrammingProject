@@ -2,7 +2,7 @@
 #include <string>
 #include "file.hpp"
 
-
+using namespace std;
 /*
  * The function gets a string path to a file and returns its length.
  * Input: A path to a file.
@@ -45,4 +45,13 @@ Flower* getDataFromFile(string path) {
         flowers[i].setFlowerType(line);
     }
     return flowers;
+}
+
+void writeDataToFile(Flower* flowers, int amt, string path) {
+    ofstream output;
+    output.open(path);
+    for (int i = 0; i < amt; i++) {
+        output<<flowers[i].getFlowerType()<<endl;
+    }
+
 }

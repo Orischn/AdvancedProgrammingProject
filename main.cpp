@@ -11,21 +11,17 @@ int main(int argc, char** argv) {
     Flower* ucFlowers = getDataFromFile(ucFilePath);
     int cLength = getFileLength(cFilePath);
     int ucLength = getFileLength(ucFilePath);
-    cout<<"k="<<argv[1]<<endl<<endl;
-    cout<<"euclidian:"<<endl<<endl;
     for (int i = 0; i < ucLength; i++) {
         ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), &Flower::euclidianDisTo);
-        cout<<ucFlowers[i].getFlowerType()<<endl;
     }
-    cout<<endl<<"manhattan:"<<endl<<endl;
+    writeDataToFile(ucFlowers, ucLength, "out/euclidean_output.csv");
     for (int i = 0; i < ucLength; i++) {
         ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), &Flower::manhattanDisTo);
-        cout<<ucFlowers[i].getFlowerType()<<endl;
     }
-    cout<<endl<<"chebyshev:"<<endl<<endl;
+    writeDataToFile(ucFlowers, ucLength, "out/manhattan_output.csv");
     for (int i = 0; i < ucLength; i++) {
         ucFlowers[i].classifyFlower(cFlowers, cLength, stoi(argv[1]), &Flower::chebyshevDisTo);
-        cout<<ucFlowers[i].getFlowerType()<<endl;
     }
-    cout<<endl<<endl;
+    writeDataToFile(ucFlowers, ucLength, "out/chebyshev_output.csv");
+
 }
