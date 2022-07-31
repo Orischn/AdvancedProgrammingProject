@@ -10,6 +10,7 @@ To compile the project use the following command:
 g++ *.cpp -std=c++11 -o main.exe
 
 To run the project after compiling, use the following command:
-./main.exe
+./main.exe k
+(k is the **number** from the KNN algorithm, which means you put a number at the command line, and not the char 'k').
 
 The output files will be created in the directory named 'out'.
