@@ -13,13 +13,16 @@ class Flower {
         double petalLength;
         string flowerType;
     public :
+        //CTORS
         Flower();
         Flower(const Flower& flower);
+        //setters
         void setSepalWidth(double sepalWidth);
         void setSepalLength(double sepalLength);
         void setPetalWidth(double petalWidth);
         void setPetalLength(double petalLength);
         void setFlowerType(string flowerType);
+        //getters
         double getSepalWidth();
         double getSepalLength();
         double getPetalWidth();
@@ -43,7 +46,12 @@ class Flower {
          * Output: The chebyshev distance from this flower to the given flower.
          */
         double chebyshevDisTo(Flower flower);
-
+        /*
+        * The function sorts the classified array using the distance function,
+        * and then finds the type of the unclassified flower based on the KNN algorithm.
+        * Input: An Array of classified flowers, the length of array, 
+        * the k number from the KNN algorithm, and a distance function.
+        */
         void classifyFlower(Flower* cFlowers, int amt, int k, double (Flower::*distance)(Flower));
 };
 
