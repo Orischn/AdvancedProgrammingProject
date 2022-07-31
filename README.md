@@ -8,9 +8,11 @@ Then, we counted the amount of times that each type of the first k flowers in th
 We set the type of unclassified flower as the most appeared type from above, which made the flower classified.
 
 To compile the project use the following command:
+
 g++ *.cpp -std=c++11 -o main.exe
 
 To run the project after compiling, use the following command:
+
 ./main.exe k
 
 (k is the **number** from the KNN algorithm, which means you put a number at the command line, and not the char 'k').
