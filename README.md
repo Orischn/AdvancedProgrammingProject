@@ -1,5 +1,7 @@
 # AdvancedProgrammingProject
-**IMPORTANT: You need to make sure that you pulled all the files and the folders**
+**IMPORTANT: You need to make sure that you pulled all the files and the folders.**
+
+**If you want to switch the file of unclassified flowers please put it in the same path as the current file.**
 
 For each unclassified flower we applied the algorithm below:
 
